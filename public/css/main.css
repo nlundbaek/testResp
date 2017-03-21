@@ -1,0 +1,17 @@
+.navbar-default{
+    background: rgb(219, 218, 211);
+    border-radius: 0;
+}
+
+#logo{
+    margin-top: -15px;
+    height: 50px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+*:focus, *:active{
+    outline: 0;
+}

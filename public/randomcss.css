@@ -1,0 +1,41 @@
+
+#frontpageleftcontainer{
+    position: fixed;
+    margin:auto;
+    overflow:auto;
+}
+#frontpagemidcontainer{
+    position: fixed;
+    margin:auto;
+    overflow:auto;
+
+}
+.rowmove{
+    padding-top: 1%;
+}
+#searchbar{
+    margin-top: 1%;
+}
+#welcomemessage {
+    margin-left: 1%;
+}
+
+#feedbackLabel{
+    text-align: center;
+    margin-top: 5%;
+}
+#feedbackArea{
+    margin-left: 35%;
+    margin-top: 5%;
+}
+#submitBtnFeedback{
+    margin-left: 35%
+}
+#submitBtn{
+    margin-left: 31%;
+}
+.feedbackimage{
+    position: fixed;
+    right: 50px;
+    bottom: 10px;
+}

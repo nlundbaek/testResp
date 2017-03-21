@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="text-center">
+        <form method="POST" autocomplete="off">
+            <h1><small>Opret bruger</small></h1>
+            <p>
+                <input type="email" name="email" placeholder="E-mail adresse" class="form-control" required autofocus />
+                <input type="password" name="password" placeholder="Adgangskode" class="form-control" required />
+                <input type="password" name="password_repeat" placeholder="Gentag adgangskode" class="form-control" required />
+            </p>
+            <% if (locals.error && error.length > 0){ %>
+            <div class="alert alert-danger">
+                <strong>Fejl:</strong> <%= error %>
+            </div>
+            <% } %>
+            <% if(locals.success && success.length > 0) { %>
+            <div class="alert alert-success">
+                <strong>Tillykke!</strong> <%= success %>
+            </div>
+            <% } %>
+            <p>
+                <% if(locals.success && success.length > 0) { %>
+                Gå til <a href="/" target="_self">log ind</a>
+                <% } else{ %>
+                <button type="submit" class="btn btn-primary">Opret bruger</button>
+                <% } %>
+            </p>
+        </form>
+    </div>
+</div>

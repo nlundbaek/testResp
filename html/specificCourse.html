@@ -1,0 +1,54 @@
+
+<div class="row">
+    <div class="col-sm-5">
+        <h1><small>Oplysninger om kursus</small></h1>
+        <div class="panel panel-default">
+            <div class="panel-body"><b>Navn:</b> <%=titleCourse%></div>
+            <div class="panel-body"><b>Beskrivelse af kursus:</b>
+            <div><%=desc%></div>
+            </div>
+            <div class="panel-body"><b>Underviser:</b> <%=lecturer%></div>
+            <div class="panel-body"><b>HK afdeling:</b> <%=sector%></div>
+            <div class="panel-body"><b>Kun for medlemmer:</b> <%=membersOnly===true ? "Ja" : "Nej" %></div>
+            <div class="panel-body"><b>Beskæftigelsetype:</b> <%=status%></div>
+            <div class="panel-body"><b>Sted:</b> <%=addressname%></div>
+            <div class="panel-body"><b>Adresse:</b> <%=address%></div>
+            <div class="panel-body"><b>Post nr:</b> <%=zip%></div>
+            <div class="panel-body"><b>Dato:</b> <%=date%></div>
+            <div class="panel-body"><b>Tid:</b> <%=time%></div>
+        </div>
+        <% if(locals.asigned){ %>
+        <form method="post" action="/frameld/<%=id%>">
+            <button type="submit" class="btn btn-primary">Frameld Kursus</button>
+            <br><br>
+        </form>
+        <%}else{%>
+        <form method="post" action="/kursus/<%=id%>">
+            <button type="submit" class="btn btn-primary">Tilmeld Kursus</button>
+            <br><br>
+        </form>
+        <%}%>
+        <form method="POST" autocomplete="off" action="/feedback/<%=id%>">
+
+            <b>Kursus:</b><br/> <input name="title" type="text" size="50" value="<%=titleCourse%>" readonly="true" ><br/>
+            <b>Hvad synes du om kurset?</b><br/>
+            <textarea name="content" rows="10" cols="65"></textarea>
+            <button type="submit" class="btn btn-primary">Opret feedback</button>
+        </form>
+           </div>
+
+    <div class="text-center">
+        <br>
+        <% if (locals.error && error.length > 0){ %>
+        <div class="alert alert-danger">
+            <strong>Fejl:</strong> <%= error %>
+        </div>
+        <% } %>
+        <% if(locals.success && success.length > 0) { %>
+        <div class="alert alert-success">
+            <strong>Tillykke!</strong> <%= success %>
+        </div>
+        <% } %>
+
+    </div>
+</div>

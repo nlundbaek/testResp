@@ -1,0 +1,206 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4">
+                <img src="/images/kurser.png" class="img-thumbnail img-responsive img-circle" alt="Cinque Terre" />
+            </div>
+            <div class="col-xs-8 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1><small>Velkommen til HK kursusapp</small></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 hidden-xs text-center">
+                        <p><small>Find kurser, se feedback på kurser fra andre brugere, og giv selv din mening om et kursus, du har deltaget i</small></p>
+                    </div>
+                    <div class="footer col-md-12 visible-lg visible-md text-center">
+                            <a target="_blank" href="https://www.hk.dk/"><span><img class="img-thumbnail img-rounded" src="./images/hklogo.png"><br><small>http://hk.dk/</small></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 visible-xs text-center">
+                <br />
+                <blockquote>
+                <p>Find kurser, se feedback på kurser fra andre brugere, og giv selv din mening om et kursus, du har deltaget i</p>
+                </blockquote>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <h2><small>Næste kurser</small></h2>
+                </div>
+                <%if(courseArray[0]!= undefined){%>
+                <div class="panel panel-default" >
+                    <div class="panel-heading" id="panelheader1"><b>
+                        <%if(courseArray[0]){%>
+                        <%=courseArray[0].title%>
+                        <%} else{%>
+                        Intet kursus tilgængeligt
+                        <%}%>
+
+                    </b>
+                        <span class="pull-right"><%=courseArray[0].date%></span>
+                    </div>
+                    <div class="panel-body" id="panelbody1">
+                        <p>
+                            <small>
+                                <%if(courseArray[0]){%>
+                                <%=courseArray[0].description%>
+                                <%} else{%>
+                                Intet kursus tilgængeligt
+                                <%}%>
+                            </small>
+                        </p>
+                        <div class="pull-right">
+                            <a href="/kursus/<%=courseArray[0].id%>" target="_self"><small>Gå til kursus</small></a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                <%if(courseArray[1]!= undefined){%>
+                <div class="panel panel-default" >
+                    <div class="panel-heading" id="panelheader2"><b>
+                        <%if(courseArray[1]){%>
+                        <%=courseArray[1].title%>
+                        <%} else{%>
+                        Intet kursus tilgængeligt
+                        <%}%></b>
+                        <span class="pull-right"><%=courseArray[1].date%></span>
+                    </div>
+                    <div class="panel-body" id="panelbody2">
+                        <p>
+                            <small>
+                                <%if(courseArray[1]){%>
+                                <%=courseArray[1].description%>
+                                <%} else{%>
+                                Intet kursus tilgængeligt
+                                <%}%>
+                            </small>
+                        </p>
+                        <div class="pull-right">
+                            <a href="/kursus/<%=courseArray[1].id%>" target="_self"><small>Gå til kursus</small></a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                <%if(courseArray[2]!= undefined){%>
+                <div class="panel panel-default" >
+                    <div class="panel-heading" id="panelheader3"><b>
+                        <%if(courseArray[2]){%>
+                        <%=courseArray[2].title%>
+                        <%} else{%>
+                        Intet kursus tilgængeligt
+                        <%}%>
+                    </b>
+                        <span class="pull-right"><%=courseArray[2].date%></span>
+                    </div>
+                    <div class="panel-body"id="panelbody3">
+                        <p>
+                            <small>
+                                <%if(courseArray[2]){%>
+                                <%=courseArray[2].description%>
+                                <%} else{%>
+                                Intet kursus tilgængeligt
+                                <%}%>
+                            </small>
+                        </p>
+                        <div class="pull-right">
+                            <a href="/kursus/<%=courseArray[2].id%>" target="_self"><small>Gå til kursus</small></a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <h2><small>Seneste feedback fra brugere</small></h2>
+                </div>
+                <%if(feedbackArray[0]!= undefined){%>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>
+                        <%if(feedbackArray[0]){%>
+                        <%=feedbackArray[0].title%>
+                        <%} else{%>
+                        Ingen feedback tilgængeligt
+                        <%}%>
+                    </b>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <small>
+                                <%if(feedbackArray[0]){%>
+                                <%=feedbackArray[0].content%>
+                                <%} else{%>
+                                Intet feedback tilgængeligt
+                                <%}%>
+                            </small>
+                        </p>
+                        <div class="pull-right">
+                            <a href="/kursus/<%=feedbackArray[0].courseId%>" target="_self"><small>Gå til kursus</small></a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                <%if(feedbackArray[1]!= undefined){%>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>
+                        <%if(feedbackArray[1]){%>
+                        <%=feedbackArray[1].title%>
+                        <%} else{%>
+                        Ingen feedback tilgængeligt
+                        <%}%>
+                    </b>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <small>
+                                <%if(feedbackArray[1]){%>
+                                <%=feedbackArray[1].content%>
+                                <%} else{%>
+                                Intet feedback tilgængeligt
+                                <%}%>
+                            </small>
+                        </p>
+                        <div class="pull-right">
+                            <a href="/kursus/<%=feedbackArray[1].courseId%>" target="_self"><small>Gå til kursus</small></a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                <%if(feedbackArray[2]!= undefined){%>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>
+                        <%if(feedbackArray[2]){%>
+                        <%=feedbackArray[2].title%>
+                        <%} else{%>
+                        Ingen feedback tilgængeligt
+                        <%}%>
+                    </b>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <small>
+                                <%if(feedbackArray[2]){%>
+                                <%=feedbackArray[2].content%>
+                                <%} else{%>
+                                Intet feedback tilgængeligt
+                                <%}%>
+                            </small>
+                        </p>
+                        <div class="pull-right">
+                            <a href="/kursus/<%=feedbackArray[2].courseId%>" target="_self"><small>Gå til kursus</small></a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<h1><small>Søgeresultater</small></h1>
+<p>
+    Du har søgt på: <i><%= query === "" ? "Ingenting" : query %></i>
+</p>
+<p>
+    Din søgning gav <i><%= results.length %></i> resultater:
+</p>
+<br />
+
+<div class="panel-group">
+<% for(var i = 0; i < results.length; i++){ %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <b><%= results[i].title %></b>
+            <div class="pull-right">
+                <i>d. <%= results[i].date %></i>
+            </div>
+        </div>
+        <div class="panel-body">
+            <%= results[i].description %>
+            <p>
+                <span class="pull-right">
+                    <a href="/kursus/<%= results[i].id %>" target="_blank">Gå til kursus</a>
+                </span>
+            </p>
+        </div>
+    </div>
+<% } %>
+</div>
+
+

@@ -1,0 +1,218 @@
+<div class="opretKursus">
+<form method="POST" autocomplete="off">
+<div class="row container-fluid">
+    <div class="col-sm-8 col-xs-8">
+        <h1><small>Oprettelse af kursus</small></h1>
+        <div class="info">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-6" for="titel">Titel på kursus:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" name="title" class="form-control" id="titel" />
+                        <br />
+                    </div>
+                    <label class="control-label col-sm-3 col-xs-8" for="titel">Bekskrivelse af kursus:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <textarea title="" class="form-control" name="description" rows="5" cols="4" id="description"></textarea>
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-2" for="underviser">Underviser:</label>
+                        <div class="col-sm-9 col-xs-12">
+                            <input type="text" class="form-control" name="lecturer" id="underviser" />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-10" for="sector">HK afdeling:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select class="form-control" name="department" id="sector">
+                            <option value="">Vælg:</option>
+                            <option value="Hovedstaden">Hovedstaden</option>
+                            <option value="Midt">Midt</option>
+                            <option value="MidtVest">Midtvest</option>
+                            <option value="Nordjylland">Nordjylland</option>
+                            <option value="Østjylland">Østjylland</option>
+                            <option value="Sjælland">Sjælland</option>
+                            <option value="Sydjylland">Sydjylland</option>
+                        </select>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                 <label class="control-label col-sm-3 col-xs-10" for="sector">For medlemmer/alle:</label>
+                </div>
+            </div>
+            <input title="" type="checkbox" name="member"> Kun medlemmer
+            <br />
+            <br />
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-10" for="status">For beskæftigelsetype:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select class="form-control" id="status" name="status">
+                            <option value="">Vælg:</option>
+                            <option value="unemployed">Ledig</option>
+                            <option value="student">Studerende</option>
+                            <option value="worker">I job</option>
+                            <option value="retired">På pension</option>
+                        </select>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-12" for="capacity">Maksimum pladser til deltagere:</label>
+                    <div class="col-xs-6 col-sm-2">
+                        <input type="number" class="form-control" name="maxDeltagere" id="capacity"/>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <h1><small>Kursus lokation</small></h1>
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-10" for="adresseNavn">Institution/organisation:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" class="form-control" name="addressname" id="adresseNavn" />
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-8" for="adresse">Adresse:</label>
+                        <div class="col-sm-9 col-xs-12">
+                            <input type="text" class="form-control" name="address" id="adresse" />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-2" for="zip">Postnr:</label>
+                        <div class="col-sm-9 col-xs-12">
+                            <div class="row">
+                                <div class="col-sm-4 col-xs-4">
+                                    <input type="number" class="form-control" id="zip" name="zip"/>
+                                </div>
+                                <div class="col-sm-8 col-xs-8">
+                                    <input title="" type="text" id="city" class="form-control" disabled />
+                                <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div>
+            <div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 col-xs-3" for="capacity">Dato:</label>
+                        <div class="col-xs-12 col-sm-3">
+                            <input title="" type="date" class="form-control" name="date" id="dato"/>
+                            <br />
+                        </div>
+
+                        <label class="control-label col-sm-2 col-xs-3" for="capacity">Tidspunkt:</label>
+                        <div class="col-xs-12 col-sm-2">
+                            <input title="" type="time" class="form-control" name="time" id="time"/>
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-sm-8 col-xs-8">
+
+        <div class="row">
+            <div class="form-group">
+                <label class="control-label col-xs-12" for="capacity">Vælg fagområder som kurset dækker:</label>
+                <br />
+                <br />
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <label><input type="checkbox" name="chk_administration"> Administration</label><br />
+                    <label><input type="checkbox" name="chk_grafisk"> Grafisk</label><br />
+                    <label><input type="checkbox" name="chk_hr"> HR</label><br />
+                    <label><input type="checkbox" name="chk_it"> It</label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <label><input type="checkbox" name="chk_kommunikation"> Kommunikation & Markedsføring</label><br />
+                    <label><input type="checkbox" name="chk_kundeservice"> Kundeservice</label><br />
+                    <label><input type="checkbox" name="chk_laboratorie"> Laboratorie- & Miljøarbejde</label><br />
+                    <label><input type="checkbox" name="chk_ledelse"> Ledelse</label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <label><input type="checkbox" name="chk_logistik"> Logistik & Spedition</label><br />
+                    <label><input type="checkbox" name="chk_raadgivning"> Rådgivning, Vejledning & Sagsbehandling</label><br />
+                    <label><input type="checkbox" name="chk_salg"> Salg & Indkøb</label><br />
+                    <label><input type="checkbox" name="chk_sundhed"> Sundhed</label><br />
+                    <label><input type="checkbox" name="chk_oekonomi"> Økonomi</label>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+
+</div>
+
+    <div class="text-center">
+        <br>
+        <% if (locals.error && error.length > 0){ %>
+        <div class="alert alert-danger">
+            <strong>Fejl:</strong> <%= error %>
+        </div>
+        <% } %>
+        <% if(locals.success && success.length > 0) { %>
+        <div class="alert alert-success">
+            <strong>Tillykke!</strong> <%= success %>
+        </div>
+        <% } %>
+        <p>
+            <button type="submit" class="btn btn-primary">Opret Kursus</button>
+
+        </p>
+    </div>
+</form>
+</div>

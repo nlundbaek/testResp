@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <% if (locals.css){ %><link rel="stylesheet" type="text/css" href="<%=css %>" /><% } %>
+    <title><%=title %></title>
+
+    <script src="jquery/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="handlebars.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <% if (locals.user && user.length > 0){ %>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <% } %>
+            <a class="navbar-brand" href="/" target="_self">
+                <img src="images/hk.png" id="logo" />
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <% if (locals.user && user.length > 0){ %>
+            <ul class="nav navbar-nav">
+                <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="/profil">Profil</a></li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kursus <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/findkursus">Find kursus</a></li>
+                    <% if(locals.admin){%>
+                    <li><a href="/opretkursus">Opret kursus</a></li>
+                    <%}%>
+                </ul>
+                </li>
+                <% if(locals.admin){%>
+                <li><a href="/findbrugere">Find bruger</a></li>
+                <%}%>
+                <li><a id="logout" href="/logud">Log ud</a></li>
+            </ul>
+            <div class="col-sm-3 col-md-3 pull-right">
+                <form method="GET" action="/soeg/" class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Søg.." name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <%- include(content) %>
+</div>
+<script>
+    <% if(locals.js && js.length > 0) { %>
+    <%- include(js) %>
+    <% } %>
+
+    $(function(){
+       $("#logout").click(function(e){
+           if(!confirm("Er du sikker på, at du vil logge ud?")){
+               e.preventDefault();
+           }
+       }) ;
+    });
+</script>
+</body>
+
+</html>

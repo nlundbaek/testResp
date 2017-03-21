@@ -1,0 +1,16 @@
+{
+  "name": "hkkursus",
+  "version": "0.0.1",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.7.0",
+    "express": "^4.8.7",
+    "morgan": "^1.7.0",
+    "supertest": "^2.0.1",
+    "mocha": "^3.0.0",
+    "mongoose": "^4.6.8",
+    "ejs": "^2.5.2",
+    "crypto-js": "^3.1.8",
+    "express-session": "^1.14.2"
+  }
+}

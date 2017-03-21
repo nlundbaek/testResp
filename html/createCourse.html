@@ -1,0 +1,31 @@
+<div class="course">
+    <div class="text-center">
+        <form method="POST" autocomplete="off">
+            <h1><small>Opret kursus</small></h1>
+            <p>
+                <input type="text" name="kNavn" placeholder="Titel på kursus" class="form-control" required autofocus />
+                <input type="text" name="kLocation" placeholder="Placering" class="form-control" required />
+                <input type="date" name="kDate" placeholder="Start-dato" class="form-control" required />
+                <input type="number" name="kPostal" placeholder="Postnummer" maxlength="4" class="form-control" required />
+                <input type="text" name="kSubject" placeholder="Fagområde" class="form-control" required />
+            </p>
+            <% if (locals.error && error.length > 0){ %>
+            <div class="alert alert-danger">
+                <strong>Fejl:</strong> <%= error %>
+            </div>
+            <% } %>
+            <% if(locals.success && success.length > 0) { %>
+            <div class="alert alert-success">
+                <strong>Tillykke!</strong> <%= success %>
+            </div>
+            <% } %>
+            <p>
+                <% if(locals.success && success.length > 0) { %>
+                Gå til <a href="/findkursus" target="_self">kurser</a>
+                <% } else{ %>
+                <button type="submit" class="btn btn-primary">Opret kursus</button>
+                <% } %>
+            </p>
+        </form>
+    </div>
+</div>

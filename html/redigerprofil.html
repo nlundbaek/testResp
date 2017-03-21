@@ -1,0 +1,174 @@
+<form method="post">
+    <div class="row">
+        <div class="col-sm-7 col-xs-8">
+            <h1><small>Oplysninger om dig</small></h1>
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="name">Navn:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" class="form-control" name="name" id="name" value="<%=name%>" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="born">Født:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-4">
+                                <select class="form-control" id="born" name="day">
+                                    <option>Dag</option>
+                                    <% for(var i=1; i <= 31; i++){ %>
+                                    <option><%= i %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <select class="form-control" name="month">
+                                    <option>Måned</option>
+                                    <% for(var i=1; i <= 12; i++){ %>
+                                    <option><%= i %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <select class="form-control" name="year">
+                                    <option>År</option>
+                                    <%
+                                    var yearOffset = new Date().getFullYear() - 15;
+                                    for(var i=yearOffset; i > (yearOffset - 90); i--){
+                                    %>
+                                    <option><%= i %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="sex">Køn:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select class="form-control" id="sex" name="sex">
+                            <option value="">Vælg:</option>
+                            <option>Kvinde</option>
+                            <option>Mand</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="zip">Postnr:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-4">
+                            <input type="number" class="form-control" id="zip" name="zip"/>
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <input type="text" id="city" class="form-control" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="status">Status:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select class="form-control" id="status" name="status">
+                            <option value="">Beskæftigelse:</option>
+                            <option>Ledig</option>
+                            <option>Studerende</option>
+                            <option>I job</option>
+                            <option>På pension</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="subject">Fagområde:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select class="form-control" id="subject"name="subject">
+                            <option value="">Vælg:</option>
+                            <option>Administation</option>
+                            <option>Grafisk</option>
+                            <option>HR</option>
+                            <option>It</option>
+                            <option>Kommunikation & Markedsføring</option>
+                            <option>Kundeservice</option>
+                            <option>Laboratorie- & Miljøarbejde</option>
+                            <option>Ledelse</option>
+                            <option>Logistik & Spedition</option>
+                            <option>Rådgivning, Vejledning & Sagsbehandling</option>
+                            <option>Salg & Indkøb</option>
+                            <option>Sundhed</option>
+                            <option>Økonomi</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="email">Email:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" class="form-control" id="email"  value="<%=email%>" disabled />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-12 col-xs-12">
+                        <label><input type="checkbox" name="member"> Er du medlem af HK?</label>
+                    </div>
+                </div>
+            </div>
+            <h1><small>Vælg interesseområder</small></h1>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-12 col-xs-12">
+                        <label><input type="checkbox" name="administration"> Administration</label><br />
+                        <label><input type="checkbox" name="grafisk"> Grafisk</label><br />
+                        <label><input type="checkbox" name="hr"> HR</label><br />
+                        <label><input type="checkbox" name="it"> It</label><br />
+                        <label><input type="checkbox" name="kommunikation"> Kommunikation & Markedsføring</label><br />
+                        <label><input type="checkbox" name="kundeservice"> Kundeservice</label><br />
+                        <label><input type="checkbox" name="laboratorie"> Laboratorie- & Miljøarbejde</label><br />
+                        <label><input type="checkbox" name="ledelse"> Ledelse</label><br />
+                        <label><input type="checkbox" name="logistik"> Logistik & Spedition</label><br />
+                        <label><input type="checkbox" name="raadgivning"> Rådgivning, Vejledning & Sagsbehandling</label><br />
+                        <label><input type="checkbox" name="salg"> Salg & Indkøb</label><br />
+                        <label><input type="checkbox" name="sundhed"> Sundhed</label><br />
+                        <label><input type="checkbox" name="oekonomi"> Økonomi</label><br />
+                    </div>
+                </div>
+            </div>
+            <h1><small>Ønsker du at modtage information om kurser hos HK pr mail?</small></h1>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-12 col-xs-12">
+                        <label><input type="checkbox" name="newsletter"> Ja tak</label>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div class="col-sm-4 hidden-xs">
+        <h1><small>Profilbillede</small></h1>
+        <img src="./images/empty_profileimg.jpg" class="img-thumbnail img-responsive img-rounded" />
+</div>
+</div>
+    <p>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Gem</button>
+        </div>
+    </p>
+</form>

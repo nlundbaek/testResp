@@ -1,0 +1,31 @@
+<form class="col-xs-12">
+
+    <div class="form-group col-xs-6">
+        <label>Søg på e-mail:</label>
+        <input type="search" class="form-control" name="email" autofocus>
+    </div>
+</form>
+<br />
+<br />
+<br />
+<hr />
+<% if(locals.isAdmin){%>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="row">
+            <div class="col-xs-6">
+                <%= email %>
+            </div>
+            <div class="col-xs-6">
+                <form method="post">
+                <% if(isAdmin === "true"){ %>
+                    <button type="submit" name="makeAdmin" class="btn btn-default btn-xs" disabled>Gør til admin</button>
+                <% } else{ %>
+                    <button type="submit" name="makeAdmin" class="btn btn-default btn-xs">Gør til admin</button>
+                <% } %>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%}%>

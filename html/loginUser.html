@@ -1,0 +1,20 @@
+<div class="login">
+    <div class="text-center">
+        <form method="POST" autocomplete="off">
+            <h1><small>Log ind</small></h1>
+            <p>
+            <input type="email" name="email" placeholder="E-mail adresse" class="form-control" required autofocus />
+            <input type="password" name="password" placeholder="Adgangskode" class="form-control" required />
+            </p>
+            <% if (locals.error && error.length > 0){ %>
+            <div class="alert alert-danger">
+                <strong>Fejl:</strong> <%= error %>
+            </div>
+            <% } %>
+            <p>
+            <button type="submit" class="btn btn-primary">Log ind</button>
+            </p>
+            eller <a href="/opret" target="_self">Opret</a>
+        </form>
+    </div>
+</div>

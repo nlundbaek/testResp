@@ -1,0 +1,70 @@
+<form>
+    <div class="row">
+        <div class="col-sm-7 col-xs-8">
+            <h1><small>Advanceret kursus søg</small></h1>
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="search">Søgeord:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="text" class="form-control" id="search" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-sm-3 col-xs-2" for="sector">Område:</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select class="form-control" id="sector">
+                            <option value="">Vælg:</option>
+                            <option>Hovedstaden</option>
+                            <option>Midt</option>
+                            <option>MidtVest</option>
+                            <option>Nordjylland</option>
+                            <option>Østjylland</option>
+                            <option>Sjælland</option>
+                            <option>Sydjylland</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <label><input type="checkbox" name="administration"> Administration</label><br />
+                        <label><input type="checkbox" name="grafisk"> Grafisk</label><br />
+                        <label><input type="checkbox" name="hr"> HR</label><br />
+                        <label><input type="checkbox" name="it"> It</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <label><input type="checkbox" name="kommunikation"> Kommunikation & Markedsføring</label><br />
+                        <label><input type="checkbox" name="kundeservice"> Kundeservice</label><br />
+                        <label><input type="checkbox" name="laboratorie"> Laboratorie- & Miljøarbejde</label><br />
+                        <label><input type="checkbox" name="ledelse"> Ledelse</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <label><input type="checkbox" name="logistik"> Logistik & Spedition</label><br />
+                        <label><input type="checkbox" name="raadgivning"> Rådgivning, Vejledning & Sagsbehandling</label><br />
+                        <label><input type="checkbox" name="salg"> Salg & Indkøb</label><br />
+                        <label><input type="checkbox" name="sundhed"> Sundhed</label><br />
+                        <label><input type="checkbox" name="oekonomi"> Økonomi</label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-12 col-xs-12">
+                        <label for="from">Fra: <input type="date" class="form-control" name="from" id="from" /></label>
+                        <label for="to">Til: <input type="date" class="form-control" min="2016-11-23" name="to" id="to" /></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<hr />
+<div id="results" class="panel-group">
+
+</div>

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-5">
+        <h1><small>Profil</small></h1>
+        <div class="panel panel-default">
+            <div class="panel-body" id="panelnavn"><b>Navn:</b> <%=name%></div>
+            <div class="panel-body" id="panelalder"><b>Alder:</b> </div>
+            <div class="panel-body" id="panelbopael"><b>By:</b> </div>
+            <div class="panel-body" id="panelstatus"><b>Beskæftigelse:</b> <%=status%></div>
+            <div class="panel-body" id="panelfagomraade"><b>Fagområde:</b> <%=subject%></div>
+            <div class="panel-body" id="panelemail"><b>E-mail:</b> <%=email%></div>
+        </div>
+        <a href="/redigerprofil" target="_self"><button class="btn btn-primary">Redigér profil</button></a>
+    </div>
+    <div class="col-sm-7">
+        <div class="text-center">
+            <h1><small>Dine næstkommende kurser</small></h1>
+        </div>
+        <% if(courses.length > 0){ %>
+           <% for(var i = 0; i < courses.length; i++){ %>
+        <div class="panel panel-default">
+            <div class="panel-heading"
+            <b><%= courses[i].title %></b>
+            <div class="pull-right">
+                <i>d. <%= courses[i].date %></i>
+            </div>
+
+
+
+
+        </div>
+        <div class="panel-body">
+            <p>
+                <small>
+                    <%= courses[i].description %>
+                </small>
+            </p>
+            <div class="pull-right">
+                <a href="/kursus/<%= courses[i]._id %>" target="_self"><small>Gå til kursus</small></a>
+            </div>
+        </div>
+    </div>
+          <% } %>
+        <% } else{ %>
+       <i>Du er ikke tilmeldt nogle kurser</i>
+        <% } %>
+
+    </div>
+</div>
